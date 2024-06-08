@@ -643,8 +643,156 @@ netmask 255.255.255.128
 
 ### Routing
 
+- Jawa
+
+```
+#Sumatera
+route add -net 10.67.20.128 netmask 255.255.255.128 gw 10.67.21.186
+route add -net 10.67.21.128 netmask 255.255.255.224 gw 10.67.21.186
+route add -net 10.67.21.176 netmask 255.255.255.252 gw 10.67.21.186
+route add -net 10.67.19.0 netmask 255.255.255.0 gw 10.67.21.186
+
+route add -net 10.67.21.180 netmask 255.255.255.252 gw 10.67.21.186
+route add -net 10.67.21.96 netmask 255.255.255.224 gw 10.67.21.186
+
+#Kalimantan
+route add -net 10.67.0.0 netmask 255.255.248.0 gw 10.67.21.202
+route add -net 10.67.21.64 netmask 255.255.255.224 gw 10.67.21.202
+route add -net 10.67.21.188 netmask 255.255.255.252 gw 10.67.21.202
+route add -net 10.67.16.0 netmask 255.255.254.0 gw 10.67.21.202
+route add -net 10.67.21.192 netmask 255.255.255.252 gw 10.67.21.202
+route add -net 10.67.18.0 netmask 255.255.255.0 gw 10.67.21.202
+
+route add -net 10.67.21.196 netmask 255.255.255.252 gw 10.67.21.202
+
+#Sulawesi
+route add -net 10.67.8.0 netmask 255.255.248.0 gw 10.67.21.206
+route add -net 10.67.21.0 netmask 255.255.255.192 gw 10.67.21.206
+route add -net 10.67.21.168 netmask 255.255.255.248 gw 10.67.21.206
+
+route add -net 10.67.20.0 netmask 255.255.255.128 gw 10.67.21.206
+route add -net 10.67.21.160 netmask 255.255.255.248 gw 10.67.21.206
+```
+
+- Sumatera
+
+```
+#A1
+route add -net 10.67.20.128 netmask 255.255.255.128 gw 10.67.21.98
+#A2
+route add -net 10.67.21.128 netmask 255.255.255.224 gw 10.67.21.98
+#A3
+route add -net 10.67.21.176 netmask 255.255.255.252 gw 10.67.21.98
+
+#A5
+route add -net 10.67.19.0 netmask 255.255.255.0 gw 10.67.21.182
+```
+
+- Sumatera-Utara
+
+```
+#A1
+route add -net 10.67.20.128 netmask 255.255.255.128 gw 10.67.21.178
+#A2
+route add -net 10.67.21.128 netmask 255.255.255.224 gw 10.67.21.178
+```
+
+- Aceh
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.67.21.177
+```
+
+- Lampung
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.67.21.181
+```
+
+- Kalimantan
+
+```
+#A8
+route add -net 10.67.0.0 netmask 255.255.248.0 gw 10.67.21.198
+#A9
+route add -net 10.67.21.64 netmask 255.255.255.224 gw 10.67.21.198
+#A10
+route add -net 10.67.21.188 netmask 255.255.255.252 gw 10.67.21.198
+#A11
+route add -net 10.67.16.0 netmask 255.255.254.0 gw 10.67.21.198
+#A12
+route add -net 10.67.21.192 netmask 255.255.255.252 gw 10.67.21.198
+#A13
+route add -net 10.67.18.0 netmask 255.255.255.0 gw 10.67.21.198
+```
+
+- Kalimantan-utara
+
+```
+#A8
+route add -net 10.67.0.0 netmask 255.255.248.0 gw 10.67.21.194
+#A9
+route add -net 10.67.21.64 netmask 255.255.255.224 gw 10.67.21.194
+#A10
+route add -net 10.67.21.188 netmask 255.255.255.252 gw 10.67.21.194
+#A11
+route add -net 10.67.16.0 netmask 255.255.254.0 gw 10.67.21.194
+```
+
+- Kalimantan-Timur
+
+```
+#A8
+route add -net 10.67.0.0 netmask 255.255.248.0 gw 10.67.21.190
+#A9
+route add -net 10.67.21.64 netmask 255.255.255.224 gw 10.67.21.190
+
+```
+
+- Kalimantan Selatan
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.67.21.189
+```
+
+- Sulawesi
+
+```
+#A16
+route add -net 10.67.8.0 netmask 255.255.248.0 gw 10.67.20.2
+#A19
+route add -net 10.67.21.168 netmask 255.255.255.248 gw 10.67.21.162
+#A18
+route add -net 10.67.21.0 netmask 255.255.255.192 gw 10.67.21.163
+
+```
+
+- Maluku-Utara
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.67.20.1
+```
+
+- Belawa
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.67.21.161
+```
+
+- Makasar
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.67.21.161
+```
+
 ### Testing
 
-## CPT - CIDR
+![testing gns1](./img/testing-gns1.png)
 
-a
+![testing gns1](./img/testing-gns2.png)
+
+![testing gns1](./img/testing-gns3.png)
+
+![testing gns1](./img/testing-gns4.png)
+
+## CPT - CIDR
