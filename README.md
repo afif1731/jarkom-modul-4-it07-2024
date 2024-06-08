@@ -796,3 +796,438 @@ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.67.21.161
 ![testing gns1](./img/testing-gns4.png)
 
 ## CPT - CIDR
+
+Pada CIDR, terdapat beberapa langkah yang perlu dilakukan, yaitu penggabungan CIDR, dan pembagian IP CIDR.
+
+### Penggabungan - CIDR
+
+Langkah pertama dalam CIDR adalah melakukan penggabungan, dari hasil penentuan rute yang telah dilakukan sebelumnya, maka langkah penggabungan CIDR pada IT07 akan menjadi seperti berikut
+
+#### Langkah #1
+
+![phase 1](./img/cidr_phase_1.jpg)
+
+#### Langkah #2
+
+![phase 2](./img/cidr_phase_2.jpg)
+
+#### Langkah #3
+
+![phase 3](./img/cidr_phase_3.jpg)
+
+#### Langkah #4
+
+![phase 4](./img/cidr_phase_4.jpg)
+
+#### Langkah #5
+
+![phase 5](./img/cidr_phase_5.jpg)
+
+#### Langkah #6
+
+![phase 6](./img/cidr_phase_6.jpg)
+
+#### Langkah #7
+
+![phase 7](./img/cidr_phase_7.jpg)
+
+#### Langkah #8
+
+![phase 8](./img/cidr_phase_8.jpg)
+
+#### Langkah #9
+
+![phase 9](./img/cidr_phase_9.jpg)
+
+#### Tabel Netmask
+
+Tabel penggabungan CIDR untuk memudahkan visualisasi
+
+![tabel 1](./img/Tabel_1.png)
+
+![tabel 2](./img/Tabel_2.png)
+
+![tabel 3](./img/Tabel_3.png)
+
+![tabel 4](./img/Tabel_4.png)
+
+![tabel 5](./img/Tabel_5.png)
+
+![tabel 6](./img/Tabel_6.png)
+
+![tabel 7](./img/Tabel_7.png)
+
+![tabel 8](./img/Tabel_8.png)
+
+### Tree CIDR
+
+Setelah mendapatkan netmask pada masing-masing penggabungan, maka diperoleh pula pembagian IP nya
+
+![tree cidr](./img/subnetting_cidr.jpg)
+
+### Pembagian IP - CIDR
+
+Adapula detail IP pada setiap subnet tertera pada tabel berikut
+
+![tabel subnet](./img/tabel%20cidr.png)
+
+### Konfigurasi pada CPT
+
+#### Router
+
+- **JAWA**
+```
+Fa0/1: 10.67.36.1
+Netmask: 255.255.255.252
+Fa1/0: 10.67.4.1
+Netmask: 255.255.255.252
+Fa1/1: 10.67.16.129
+Netmask: 255.255.255.252
+```
+
+#### Gateway
+
+- **SUMATERA**
+```
+Fa0/0: 10.67.36.2
+Netmask: 255.255.255.252
+Fa0/1: 10.67.34.1
+Netmask: 255.255.255.252
+Fa1/0: 10.67.32.65
+Netmask: 255.255.255.224
+```
+
+- **SUMATERA-UTARA**
+```
+Fa0/0: 10.67.32.65
+Netmask: 255.255.255.224
+Fa0/1: 10.67.32.33
+Netmask: 255.255.255.252
+```
+
+- **LAMPUNG**
+```
+Fa0/0: 10.67.34.2
+Netmask: 255.255.255.252
+Fa0/1: 10.67.33.1
+Netmask: 255.255.255.0
+```
+
+- **ACEH**
+```
+Fa0/0: 10.67.32.34
+Netmask: 255.255.255.252
+Fa0/1: 10.67.32.1
+Netmask: 255.255.255.224
+Fa1/0: 10.67.32.129
+Netmask: 255.255.255.128
+```
+
+- **SULAWESI**
+```
+Fa0/0: 10.67.16.130
+Netmask: 255.255.255.252
+Fa0/1: 10.67.16.9
+Netmask: 255.255.255.248
+Fa1/0: 10.67.17.1
+Netmask: 255.255.255.128
+```
+
+- **MALUKU-UTARA**
+```
+Fa0/0: 10.67.17.2
+Netmask: 255.255.255.128
+Fa0/1: 10.67.24.1
+Netmask: 255.255.248.0
+```
+
+- **MAKASAR**
+```
+Fa0/0: 10.67.16.10
+Netmask: 255.255.255.248
+Fa0/1: 10.67.16.1
+Netmask: 255.255.255.248
+```
+
+- **BELAWA**
+```
+Fa0/0: 10.67.16.11
+Netmask: 255.255.248.0
+Fa0/1: 10.67.16.65
+Netmask: 255.255.255.192
+```
+
+- **KALIMANTAN**
+```
+Fa0/0: 10.67.4.2
+Netmask: 255.255.255.252
+Fa0/1: 10.67.0.129
+Netmask: 255.255.255.252
+```
+
+- **KALIMANTAN-UTARA**
+```
+Fa0/0: 10.67.0.130
+Netmask: 255.255.255.252
+Fa0/1: 10.67.1.1
+Netmask: 255.255.255.0
+Fa1/0: 10.67.0.65
+Netmask: 255.255.255.252
+```
+
+- **KALIMANTAN-TIMUR**
+```
+Fa0/0: 10.67.0.66
+Netmask: 255.255.255.252
+Fa0/1: 10.67.2.1
+Netmask: 255.255.254.0
+Fa1/0: 10.67.0.33
+Netmask: 255.255.255.252
+```
+
+- **KALIMANTAN-SELATAN**
+```
+Fa0/0: 10.67.0.34
+Netmask: 255.255.255.252
+Fa0/1: 10.67.0.1
+Netmask: 255.255.255.224
+Fa1/0: 10.67.8.1
+Netmask: 255.255.248.0
+```
+
+#### Server
+
+- **Sebesi**
+```
+Fa0: 10.67.33.2
+Gateway: 10.67.33.1
+Netmask: 255.255.255.0
+```
+
+- **Morotai**
+```
+Fa0: 10.67.24.2
+Gateway: 10.67.24.1
+Netmask: 255.255.248.0
+```
+
+- **Galesong**
+```
+Fa0: 10.67.16.2
+Gateway: 10.67.16.1
+Netmask: 255.255.255.248
+```
+
+- **Topejawa-Takalar**
+```
+Fa0: 10.67.16.3
+Gateway: 10.67.16.1
+Netmask: 255.255.255.248
+```
+
+- **Bangkirai**
+```
+Fa0: 10.67.2.2
+Gateway: 10.67.2.1
+Netmask: 255.255.254.0
+```
+
+#### Client
+
+- **Berawang-Tampu (53 host)**
+```
+Fa0: 10.67.32.130
+Gateway: 10.67.32.129
+Netmask: 255.255.255.128
+```
+
+- **Enang-Enang (27 host)**
+```
+Fa0: 10.67.32.182
+Gateway: 10.67.32.129
+Netmask: 255.255.255.128
+```
+
+- **Starland (44 host)**
+```
+Fa0: 10.67.32.208
+Gateway: 10.67.32.129
+Netmask: 255.255.255.128
+```
+
+- **Sabang (6 host)**
+```
+Fa0: 10.67.32.2
+Gateway: 10.67.32.1
+Netmask: 255.255.255.224
+```
+
+- **Lambaro (8 host)**
+```
+Fa0: 10.67.32.7
+Gateway: 10.67.32.1
+Netmask: 255.255.255.224
+```
+
+- **Samosir (14 host)**
+```
+Fa0: 10.67.32.67
+Gateway: 10.67.32.65
+Netmask: 255.255.255.224
+```
+
+- **Sibandang (53 host)**
+```
+Fa0: 10.67.32.80
+Gateway: 10.67.32.65
+Netmask: 255.255.255.224
+```
+
+- **Sebuku (53 host)**
+```
+Fa0: 10.67.33.3
+Gateway: 10.67.33.1
+Netmask: 255.255.255.0
+```
+
+- **Baru (30 host)**
+```
+Fa0: 10.67.16.66
+Gateway: 10.67.16.65
+Netmask: 255.255.255.192
+```
+
+- **Madini (30 host)**
+```
+Fa0: 10.67.16.96
+Gateway: 10.67.16.65
+Netmask: 255.255.255.192
+```
+
+- **Tobelo (511 host)**
+```
+Fa0: 10.67.24.3
+Gateway: 10.67.24.1
+Netmask: 255.255.248.0
+```
+
+- **Ternate (511 host)**
+```
+Fa0: 10.67.26.2
+Gateway: 10.67.24.1
+Netmask: 255.255.248.0
+```
+
+- **PC-Gorontalo (32 host)**
+```
+Fa0: 10.67.17.3
+Gateway: 10.67.17.1
+Netmask: 255.255.255.128
+```
+
+- **PC-Marisa (30 host)**
+```
+Fa0: 10.67.17.35
+Gateway: 10.67.17.1
+Netmask: 255.255.255.128
+```
+
+- **Bajuin (511 host)**
+```
+Fa0: 10.67.8.2
+Gateway: 10.67.8.1
+Netmask: 255.255.248.0
+```
+
+- **Takisung (513 host)**
+```
+Fa0: 10.67.10.2
+Gateway: 10.67.8.1
+Netmask: 255.255.248.0
+```
+
+- **Batakan (1020 host)**
+```
+Fa0: 10.67.12.4
+Gateway: 10.67.8.1
+Netmask: 255.255.248.0
+```
+
+- **Angsana (15 host)**
+```
+Fa0: 10.67.0.2
+Gateway: 10.67.0.1
+Netmask: 255.255.255.224
+```
+
+- **Lamaru (456 host)**
+```
+Fa0: 10.67.2.3
+Gateway: 10.67.2.1
+Netmask: 255.255.254.0
+```
+
+- **Selimau (200 host)**
+```
+Fa0: 10.67.1.2
+Gateway: 10.67.1.1
+Netmask: 255.255.255.0
+```
+
+### Routing pada CPT
+
+Routing dilakukan pada setiap node router sedemikian rupa sehingga setiap node (Router, Client, dan Server) dapat terhubung satu sama lain.
+
+- **JAWA**
+
+![jawa](./img/Jawa-1.png)
+
+![jawa](./img/Jawa-2.png)
+
+- **SUMATRA**
+
+![sumatra](./img/Sumatra.png)
+
+- **SUMATERA-UTARA**
+
+![sumut](./img/Sumatra-utara.png)
+
+- **ACEH**
+
+![aceh](./img/Aceh.png)
+
+- **LAMPUNG**
+
+![lampung](./img/Lampung.png)
+
+- **SULAWESI**
+
+![sulawesi](./img/Sulawesi.png)
+
+- **MALUKU-UTARA**
+
+![malut](./img/Maluku-utara.png)
+
+- **MAKASAR**
+
+![makasar](./img/Makasar.png)
+
+- **BELAWA**
+
+![belawa](./img/Belawa.png)
+
+- **KALIMANTAN**
+
+![kalimantan](./img/Kalimantan.png)
+
+- **KALIMANTAN-UTARA**
+
+![kalut](./img/Kalimantan-utara.png)
+
+- **KALIMANTAN-TIMUR**
+
+![kaltim](./img/kaltim.png)
+
+- **KALIMANTAN-SELATAN**
+
+![kalsel](./img/kalsel.png)
